@@ -1,0 +1,169 @@
+﻿@model Online_Shopping.Models.MyModel
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_customerLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Product Details | E-Shopper</title>
+    <link href="../../CustomerAssets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../CustomerAssets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../CustomerAssets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="../../CustomerAssets/css/price-range.css" rel="stylesheet">
+    <link href="../../CustomerAssets/css/animate.css" rel="stylesheet">
+    <link href="../../CustomerAssets/css/main.css" rel="stylesheet">
+    <link href="../../CustomerAssets/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../../CustomerAssets/../../CustomerAssets//ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../CustomerAssets/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../CustomerAssets/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../CustomerAssets/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../../CustomerAssets/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-11 padding-right">
+                    <div class="product-details">
+                        <!--product-details-->
+                        <div class="col-sm-4">
+                            <div class="view-product">
+                                <img src="~/UploadedImages/@Model.MyProduct.Image" width="255" height="345" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                                <div class="product-information">
+                                    <!--/product-information-->
+
+                                    @if (Convert.ToBoolean(Model.MyProduct.IsSale) == true)
+                                    {
+                                        <img src="../../CustomerAssets/images/home/sale.png" class="new" alt="" />
+                                    }
+                                    else
+                                    {
+                                        <img src="../../CustomerAssets/images/product-details/new.jpg" class="newarrival" alt="" />
+                                    }
+                                    <h2>@Model.MyProduct.ProductName</h2>
+                                    <p>Product ID: @Model.MyProduct.ProductID</p>
+                                    @if (Convert.ToBoolean(Model.MyProduct.IsSale) == true)
+                                    {
+                                        <span>
+                                            <span>@Model.MyProduct.Discount% Off</span>
+                                            <span><del>RS:@Model.MyProduct.SalePrice</del></span>
+                                            <span>Rs.@Model.MyProduct.newprice</span>
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span>RS:@Model.MyProduct.SalePrice</span>
+                                    }
+                                    <p><b>Quantity:@Model.MyProduct.avaQty</b></p>
+                                    <p><b>Availability:</b> In Stock</p>
+                                    <p><b>Condition:</b> New</p>
+                                    <p><b>Cat:</b> @Model.MyCat.CatName</p>
+                                    <p><b>SubCat:</b> @Model.MySubCat.SubCatName</p>
+                                    <p><b>Brand:</b> @Model.MyBrand.BrandName</p>
+                                    <p><b>Color:</b> @Model.MyColor.ColorName</p>
+                                    <p><b>Size:</b> @Model.MySize.SizeName</p>
+                                    <p><b>Description:</b> @Model.MyProduct.ProductDetail</p>
+                                    <ul class="nav nav-pills">
+                                        <li><a href="../Cart/AddToCart?id=@Model.MyProduct.ProductID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a></li>
+                                        <li><a href="../Wishlist/AddToWishlist?pid=@Model.MyProduct.ProductID"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                    </ul>
+                                </div><!--/product-information-->
+                        </div>
+                    </div><!--/product-details-->
+                </div>
+                @foreach (var item in ViewBag.sugProducts)
+                {
+                    <div class="col-sm-3">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        @if (Convert.ToBoolean(item.MyProduct.IsSale) == false)
+                                        {
+                                            <img src="../../UploadedImages/@item.MyProduct.Image" width="255" height="345" alt="" />
+                                        }
+                                        @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                        {
+                                            <h2>@item.MyProduct.Discount% Off</h2>
+                                            <h2><del>Rs.@item.MyProduct.SalePrice</del></h2>
+                                            <h2>Rs.@item.MyProduct.newprice</h2>
+                                        }
+                                        else
+                                        {
+                                            <h2>Rs.@item.MyProduct.SalePrice</h2>
+                                        }
+                                        <h2>Stock : @item.MyProduct.avaQty</h2>
+                                        <h4 style="color:white">@item.MyProduct.ProductName</h4>
+                                        <a href="../Cart/AddToCart?id=@item.MyProduct.ProductID" class="btn btn-default add-to-cart">
+                                            <i class="fa fa-shopping-cart"></i>Add to cart
+                                        </a>
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                            {
+                                                <h2>@item.MyProduct.Discount% Off</h2>
+                                                <h2><del>Rs.@item.MyProduct.SalePrice</del></h2>
+                                                <h2>Rs.@item.MyProduct.newprice</h2>
+                                            }
+                                            else
+                                            {
+                                                <h2>Rs.@item.MyProduct.SalePrice</h2>
+                                            }
+                                            <h2>Stock : @item.MyProduct.avaQty</h2>
+                                            <h4 style="color:white">@item.MyProduct.ProductName</h4>
+                                            <a href="../Cart/AddToCart?id=@item.MyProduct.ProductID" class="btn btn-default add-to-cart">
+                                                <i class="fa fa-shopping-cart"></i>Add to cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                    {
+                                        <img src="../../CustomerAssets/images/home/sale.png" class="new" alt="" />
+                                    }
+                                    else
+                                    {
+                                        <img src="../../CustomerAssets/images/product-details/new.jpg" class="newarrival" alt="" />
+                                    }
+                                </div>
+                                <div class="choose">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li><a href="../Wishlist/AddToWishlist?pid=@item.MyProduct.ProductID"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                        <li><a href="../Customer/ProductDetails?id=@item.MyProduct.ProductID"><i class="fa fa-table"></i>More Details</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/price-range.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

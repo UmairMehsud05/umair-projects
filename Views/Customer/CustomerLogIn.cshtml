@@ -1,0 +1,48 @@
+﻿@model Online_Shopping.Models.Customer 
+
+@{
+    ViewBag.Title = "CustomerLogIn";
+    Layout = "~/Views/Shared/_customerLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        <div class="login-form">
+            <!--login form-->
+            <h2>Login to your account</h2>
+            <form method="post">
+                <div class="form-group">
+                    @Html.TextBoxFor(a => a.CusEmail, htmlAttributes: new { @placeholder = "Email Address" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(a => a.CusPassword, htmlAttributes: new { @placeholder = "Password"})
+                    <i class="fa fa-eye float-right" style="cursor:pointer"></i>
+                    <i class="fa fa-eye fa-eye-slash float-right" style="cursor:pointer"></i>
+                    
+                </div>
+                @*<input type="email" name="CusEmail" placeholder="Email Address" />
+        <input type="password" name="CusPassword" placeholder="Password" />*@
+                <span>
+                    @Html.CheckBoxFor(a => a.chkKeepMeSignIn)
+                    @*<input type="checkbox" class="checkbox" name="chkKeepMeSignIn">*@
+                    Keep me signed in
+                </span>
+                <button type="submit" class="btn btn-default">Login</button>
+                <span class="badge badge-danger">
+                    @ViewBag.msg
+                </span>
+                <br />
+                <a href="../Customer/ForgetPassword">Forget Password?</a>
+                <br />
+                <br />
+            </form>
+        </div><!--/login form-->
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+

@@ -1,0 +1,101 @@
+﻿@model  IEnumerable<Online_Shopping.Models.MyModel>
+@{
+    ViewBag.Title = "AddToWishlist";
+    Layout = "~/Views/Shared/_customerLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 padding-right">
+                    <div class="features_items">
+                        <!--features_items-->
+                        <h2 class="title text-center">Features Items</h2>
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-sm-3">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="../../UploadedImages/@item.MyProduct.Image" width="255" height="345" alt="" />
+                                                <br />
+                                                <br />
+                                                @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                                {
+                                                    <p>@item.MyProduct.Discount% Off</p>
+                                                    <p><del>Rs.@item.MyProduct.SalePrice</del></p>
+                                                    <p>Rs.@item.MyProduct.newprice</p>
+                                                }
+                                                else
+                                                {
+                                                    <p>Rs.@item.MyProduct.SalePrice</p>
+                                                }
+                                                <p>Availability: @item.MyProduct.ISAvailable</p>
+                                                <p>Stock: @item.MyProduct.avaQty</p>
+                                                <p>@item.MyProduct.ProductName</p>
+                                                <p>Date: @item.MyWishlist.Date</p>
+                                                <a href="#" class="btn btn-default add-to-cart">
+                                                    <i class="fa fa-shopping-cart"></i>Add to cart
+                                                </a>
+                                            </div>
+                                            <div class="product-overlay">
+                                                <div class="overlay-content">
+                                                    @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                                    {
+                                                        <h2>@item.MyProduct.Discount% Off</h2>
+                                                        <h2><del>Rs.@item.MyProduct.SalePrice</del></h2>
+                                                        <h2>Rs.@item.MyProduct.newprice</h2>
+                                                    }
+                                                    else
+                                                    {
+                                                        <h2>Rs.@item.MyProduct.SalePrice</h2>
+                                                    }
+                                                    <h2>Availability: @item.MyProduct.ISAvailable</h2>
+                                                    <h2>Stock: @item.MyProduct.avaQty</h2>
+                                                    <h2>@item.MyProduct.ProductName</h2>
+                                                    <h2>Date: @item.MyWishlist.Date</h2>
+                                                    <a href="../Cart/AddToCart?id=@item.MyWishlist.ProductId" class="btn btn-default add-to-cart">
+                                                        <i class="fa fa-shopping-cart"></i>Add to cart
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                            {
+                                                <img src="../../CustomerAssets/../../CustomerAssets//home/sale.png" class="new" alt="" />
+                                            }
+                                            else
+                                            {
+                                                <img src="../../CustomerAssets/../../CustomerAssets//product-details/new.jpg" class="newarrival" alt="" />
+                                            }
+                                        </div>
+                                        <div class="choose">
+                                            <ul class="nav nav-pills nav-justified">
+                                                <li><a href="../Customer/ProductDetails?id=@item.MyWishlist.ProductId"><i class="fa fa-table"></i>More Details</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        }
+                    </div><!--features_items-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/price-range.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

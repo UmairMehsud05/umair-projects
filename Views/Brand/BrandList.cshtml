@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Online_Shopping.Models.Brand>
+
+@{
+    ViewBag.Title = "BrandList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BrandList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddBrand")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrandName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AddBrand", new { id=item.BrandID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BrandID })
+        </td>
+    </tr>
+}
+
+</table>

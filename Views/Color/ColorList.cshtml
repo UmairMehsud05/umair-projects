@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Online_Shopping.Models.Color>
+
+@{
+    ViewBag.Title = "ColorList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ColorList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddColor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ColorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColorCode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColorCode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AddColor", new { id=item.ColorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ColorID })
+        </td>
+    </tr>
+}
+
+</table>

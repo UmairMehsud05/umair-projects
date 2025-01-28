@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Online_Shopping.Models.MyModel>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int subtotal = 0;
+    int total = 0;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <section id="cart_items">
+        <div class="container">
+
+            <a class="btn btn-dark" href="../Checkout/Orderlist"><i class="nav-icon ti ti-arrow-left"></i></a>
+            <br />
+            <br />
+            <div class="table-responsive cart_info">
+                <table class="table table-condensed table-borderless">
+                    <thead class="table-dark">
+                        <tr class="cart_menu">
+                            <td>ProductName</td>
+                            <td>Price</td>
+                            <td>Discount</td>
+                            <td>QTY</td>
+                            <td>NewPrice</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <p>@item.MyProduct.ProductName</p>
+                                </td>
+                                <td>
+                                    <p>@item.MyProduct.SalePrice</p>
+                                </td>
+                                <td>
+                                    <p>@item.MyProduct.Discount%</p>
+                                </td>
+                                <td>
+                                    <p>@item.MyOrderDetails.QTY</p>
+                                </td>
+                                <td>
+                                    <p>@item.MyOrderDetails.newPrice</p>
+                                </td>
+                            </tr>
+                            subtotal += item.MyOrderDetails.newPrice;
+                        }
+
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                            <td colspan="2">
+                                <table class="table table-condensed total-result">
+                                    <tr>
+                                        <td>Cart Sub Total</td>
+                                        <td>Rs. @subtotal</td>
+                                    </tr>
+                                    <tr class="shipping-cost">
+                                        <td>Shipping Cost</td>
+                                        <td>200</td>
+                                    </tr>
+                                    @{ total = subtotal + 200;}
+                                    <tr>
+                                        <td>Total</td>
+                                        <td><span>Rs. @total</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section> <!--/#cart_items-->
+
+
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

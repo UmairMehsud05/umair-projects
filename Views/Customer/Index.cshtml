@@ -1,0 +1,215 @@
+﻿@model Online_Shopping.Models.Product
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_customerLayout.cshtml";
+}
+
+
+
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1><span>Online</span>Shopping</h1>
+                                <h2>Online Shopping Center</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../../CustomerAssets/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+                                <img src="../../CustomerAssets/images/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Online</span>Shopping</h1>
+                                <h2>100% Responsive Design</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../../CustomerAssets/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+                                <img src="../../CustomerAssets/images/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Online</span>Shopping</h1>
+                                <h2>Online Shopping Center</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../../CustomerAssets/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+                                <img src="../../CustomerAssets/images/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3" style="position:sticky;top:5%;overflow-y:scroll;height:600px">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <!--category-productsr-->
+                        @foreach (var item in ViewBag.CategoryList)
+                        {
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="../Customer/Index?CatID=@item.CatID">@item.CatName</a></h4>
+                                </div>
+                            </div>
+                        }
+
+                    </div><!--/category-products-->
+
+                    <div class="brands_products">
+                        <!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                @foreach (var item in ViewBag.BrandList)
+                                {
+                                    <li><a href="../Customer/Index?BrandID=@item.BrandID"> <span class="pull-right">(50)</span>@item.BrandName</a></li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+
+                    <br />
+                    <br />
+
+                    <!--Color-->
+                    <div class="brands_products">
+                        <!--brands_products-->
+                        <h2>Colors</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                @foreach (var item in ViewBag.ColorList)
+                                {
+                                    <li><a href="../Customer/Index?ColorID=@item.ColorID">@item.ColorName</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <!--/Color-->
+                    <!--Size-->
+
+                    <div class="ProductSize">
+                        <!--brands_products-->
+                        <h2>Size</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                @foreach (var item in ViewBag.SizeList)
+                                {
+                                    <li><a href="../Customer/Index?SizeID=@item.SizeID">@item.SizeName</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--/Size-->
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">Features Items</h2>
+                    <div class="row">
+                        @foreach (var item in ViewBag.ProductList)
+                        {
+                            <div class="col-md-4">
+                                <div class="product-image-wrapper" style="height:560px">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="../../UploadedImages/@item.MyProduct.Image" width="255" height="300" alt="" />
+                                            @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                            {
+                                                <h4 style="color: #FE980F">@item.MyProduct.Discount% Off</h4>
+                                                <h4 style="color: #FE980F"><del>Rs.@item.MyProduct.SalePrice</del></h4>
+                                                <h4 style="color: #FE980F">Rs.@item.MyProduct.newprice</h4>
+                                            }
+                                            else
+                                            {
+                                                <h2>Rs.@item.MyProduct.SalePrice</h2>
+                                            }
+                                            <h4>@item.MyProduct.ProductName</h4>
+                                            <a href="../Cart/AddToCart?id=@item.MyProduct.ProductID" class="btn btn-default add-to-cart">
+                                                <i class="fa fa-shopping-cart"></i>Add to cart
+                                            </a>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <div class="overlay-content">
+                                                @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                                {
+                                                    <h2>@item.MyProduct.Discount% Off</h2>
+                                                    <h2><del>Rs.@item.MyProduct.SalePrice</del></h2>
+                                                    <h2>Rs.@item.MyProduct.newprice</h2>
+                                                }
+                                                else
+                                                {
+                                                    <h2>Rs.@item.MyProduct.SalePrice</h2>
+                                                }
+                                                <h2>Stock : @item.MyProduct.avaQty</h2>
+                                                <h4 style="color:white">@item.MyProduct.ProductName</h4>
+                                                <a href="../Cart/AddToCart?id=@item.MyProduct.ProductID" class="btn btn-default add-to-cart">
+                                                    <i class="fa fa-shopping-cart"></i>Add to cart
+                                                </a>
+                                            </div>
+                                        </div>
+                                        @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                        {
+                                            <img src="../../CustomerAssets/images/home/sale.png" class="new" alt="" />
+                                        }
+                                        else
+                                        {
+                                            <img src="../../CustomerAssets/images/product-details/new.jpg" class="newarrival" alt="" />
+                                        }
+
+                                    </div>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href="../Wishlist/AddToWishlist?pid=@item.MyProduct.ProductID"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                            <li><a href="../Customer/ProductDetails?id=@item.MyProduct.ProductID"><i class="fa fa-table"></i>More Details</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div><!--features_items-->
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,72 @@
+﻿@model Online_Shopping.Models.Brand
+
+@{
+    ViewBag.Title = "AddBrand";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-4">
+        <div class="card card-statistics">
+            <div class="card-header">
+                <div class="card-heading">
+                    <h4 class="card-title">Add Brand</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm(FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        @Html.HiddenFor(a => a.BrandID)
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <label>Brand Name</label>
+                                @Html.EditorFor(model => model.BrandName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.BrandName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Add Category" class="btn btn-primary" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-8">
+        <div class="card card-statistics">
+            <div class="card-body">
+                <div class="export-table-wrapper table-responsive">
+                    <table id="export-table" class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>@Html.DisplayNameFor(x => x.BrandName)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.BrandList)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.BrandName
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink(" ", "AddBrand", new { id = item.BrandID }, new { @class = "btn btn-primary zmdi zmdi-edit" })
+                                        @Html.ActionLink(" ", "Delete", new { id = item.BrandID }, new { @class = "btn btn-danger zmdi zmdi-delete" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

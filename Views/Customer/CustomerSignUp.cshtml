@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_customerLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        <div class="signup-form">
+            <!--sign up form-->
+            <h2>New User Signup!</h2>
+            <form method="post">
+                <input type="text" name="CusName" placeholder="Name" required />
+                <input type="email" name="CusEmail" placeholder="Email Address" required />
+                <input type="tel" name="CusContact" placeholder="Contact" required/>
+                <input type="password" name="CusPassword" placeholder="Password" required min="8" maxlength="16"/>
+                <button type="submit" class="btn btn-default">Signup</button>
+            </form>
+        </div><!--/sign up form-->
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+<br />
+<br />

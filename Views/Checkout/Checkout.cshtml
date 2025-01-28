@@ -1,0 +1,154 @@
+﻿@model IEnumerable<Online_Shopping.Models.MyModel>
+@{
+    Layout = "~/Views/Shared/_customerLayout.cshtml";
+    int subtotal = 0;
+    int total = 0;
+    int productsubtotal = 0;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <section id="cart_items">
+        <div class="container">
+
+            <div class="shopper-informations">
+                <div class="row">
+                    <div class="col-sm-3">
+                  
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="shopper-info">
+                            <p>Bill To</p>
+                            <form method="post">
+                                <label>Contact</label>
+                                <input type="number" name="Contact" placeholder="Contact">
+                                <label>Zip/Postal Code</label>
+                                <input type="number" name="PostalCode" placeholder="Zip/Postal Code">
+                                <label>Address</label>
+                                <input type="text" name="Address" placeholder="Address">
+                                <label>ShippingCharges</label>
+                                <input type="number" disabled name="ShippingCharges" placeholder="200">
+                                <input onclick="return confirm('Are you sure want to Confirm this product?')" type="submit" class="btn btn-primary" value="Confirm Order" />
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+
+                    </div>
+                </div>
+            </div>
+            <div class="review-payment">
+                <h2>Review & Payment</h2>
+            </div>
+
+            <div class="table-responsive cart_info">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="cart_menu">
+                            <td class="image">Item</td>
+                            <td class="description"></td>
+                            <td class="price">Price</td>
+                            <td class="quantity">Quantity</td>
+                            <td class="total">Sub-Total</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="cart_product">
+                                    <a href="../Customer/ProductDetails?id=@item.MyCart.ProductId"></a>
+                                    <img src="../../UploadedImages/@item.MyProduct.Image" width="150" height="150" alt="" />
+                                </td>
+                                <td class="cart_description">
+                                    <h4><a href="../Customer/ProductDetails?id=@item.MyCart.ProductId">@item.MyProduct.ProductName</a></h4>
+                                    <p>Product ID: @item.MyCart.ProductId</p>
+                                </td>
+                                <td class="cart_price">
+
+                                    @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                    {
+                                        <p><del>Rs. @item.MyProduct.SalePrice</del></p>
+                                        <p> @item.MyCart.Discount% Off</p>
+                                        <p>Rs. @item.MyProduct.newprice</p>
+                                    }
+                                    else
+                                    {
+                                        <p>Rs. @item.MyProduct.SalePrice</p>
+                                    }
+                                </td>
+                                <td class="cart_quantity">
+                                    <p>@item.MyCart.QTY</p>
+                                </td>
+                                <td class="cart_total">
+                                    @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                    {
+                                        productsubtotal = Convert.ToInt32(item.MyCart.QTY) * Convert.ToInt32(item.MyProduct.newprice);
+                                        <p class="cart_total_price">@productsubtotal</p>
+                                    }
+                                    else
+                                    {
+                                        productsubtotal = Convert.ToInt32(item.MyCart.QTY) * Convert.ToInt32(item.MyProduct.SalePrice);
+                                        <p class="cart_total_price">@productsubtotal</p>
+                                    }
+                                </td>
+                                <td class="cart_delete">
+                                    <a class="cart_quantity_delete" onclick="return confirm('Are you sure want to delete this product?')"
+                                       href="../Cart/CartDelete?id=@item.MyCart.CartId"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                            subtotal += productsubtotal;
+                        }
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                            <td colspan="2">
+                                <table class="table table-condensed total-result">
+                                    <tr>
+                                        <td>Cart Sub Total</td>
+                                        <td>@subtotal</td>
+                                    </tr>
+                                    <tr class="shipping-cost">
+                                        <td>Shipping Cost</td>
+                                        <td>Rs.200</td>
+                                    </tr>
+                                    @{total = subtotal + 200;}
+                                    <tr>
+                                        <td>Total</td>
+                                        <td><span>Rs.@total</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            
+            <div class="payment-options">
+                <span>
+                    <label><input type="checkbox"> Direct Bank Transfer</label>
+                </span>
+                <span>
+                    <label><input type="checkbox"> Check Payment</label>
+                </span>
+                <span>
+                    <label><input type="checkbox"> Paypal</label>
+                </span>
+            </div>
+        </div>
+    </section> <!--/#cart_items-->
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

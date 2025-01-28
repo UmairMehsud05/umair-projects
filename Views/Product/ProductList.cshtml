@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Online_Shopping.Models.Product>
+
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProductList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddProduct")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CatID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCatID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avaQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDetail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISAvailable)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCatID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrandID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchasePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.avaQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDetail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISAvailable)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AddProduct", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>

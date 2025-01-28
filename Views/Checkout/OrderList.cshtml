@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Online_Shopping.Models.MyModel>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <section id="cart_items">
+        <div class="container">
+
+            <div class="table-responsive cart_info">
+                <table class="table table-condensed table-borderless">
+                    <thead class="table-dark">
+                        <tr class="cart_menu">
+                            <td>OrderID</td>
+                            <td>Name</td>
+                            <td>Email</td>
+                            <td>date</td>
+                            <td>TotalProduct</td>
+                            <td>Status</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @item.MyCheckout.OrderId
+                            </td>
+                            <td>
+                                <p>@item.MyCustomer.CusName</p>
+                            </td>
+                            <td>
+                                <p>@item.MyCustomer.CusEmail</p>
+                            </td>
+                            <td>
+                                <p>@item.MyCheckout.Date</p>
+                            </td>
+                            <td>
+                                <p>@item.MyOrderDetails.QTY</p>
+                            </td>
+                            <td>
+                                @if (Convert.ToInt32(item.MyCheckout.OrderStatus) == 0)
+                                {
+                                    <span class="badge bg-warning">Pending</span>
+                                }
+                                else if (Convert.ToInt32(item.MyCheckout.OrderStatus) == 1)
+                                {
+                                    <span class="badge bg-success">Approved</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Rejected</span>
+                                }
+                            </td>
+                            <td>
+                                <a href="../Checkout/PendingOrder?id=@item.MyCheckout.OrderId" class="btn btn-warning">Pending</a>
+                                <a href="../Checkout/ApprovedOrder?id=@item.MyCheckout.OrderId" class="btn btn-success">Approved</a>
+                                <a href="../Checkout/RejectedOrder?id=@item.MyCheckout.OrderId" class="btn btn-danger">Rejected</a>
+                                <a class="btn btn-dark" href="../OrderDetail/OrderDetails?id=@item.MyCheckout.OrderId">View Details</a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section> <!--/#cart_items-->
+
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

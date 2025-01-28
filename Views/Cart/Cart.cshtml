@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Online_Shopping.Models.MyModel>
+@{
+    Layout = "~/Views/Shared/_customerLayout.cshtml";
+    int subtotal = 0;
+    int total = 0;
+    int productsubtotal = 0;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <section id="cart_items">
+        <div class="container">
+
+
+            <div class="table-responsive cart_info">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="cart_menu">
+                            <td class="image">Item</td>
+                            <td class="description"></td>
+                            <td class="price">Price</td>
+                            <td class="quantity">Quantity</td>
+                            <td class="total">Sub-Total</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="cart_product">
+                                    <a href="../Customer/ProductDetails?id=@item.MyCart.ProductId"></a>
+                                    <img src="../../UploadedImages/@item.MyProduct.Image" width="150" height="150" alt="" />
+                                </td>
+                                <td class="cart_description">
+                                    <h4><a href="../Customer/ProductDetails?id=@item.MyCart.ProductId">@item.MyProduct.ProductName</a></h4>
+                                    <p>Product ID: @item.MyCart.ProductId</p>
+                                </td>
+                                <td class="cart_price">
+
+                                    @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                    {
+                                        <p><del>Rs. @item.MyProduct.SalePrice</del></p>
+                                        <p> @item.MyCart.Discount% Off</p>
+                                        <p>Rs. @item.MyProduct.newprice</p>
+                                    }
+                                    else
+                                    {
+                                        <p>Rs. @item.MyProduct.SalePrice</p>
+                                    }
+                                </td>
+                                <td class="cart_quantity">
+                                    <div class="cart_quantity_button">
+                                        <a class="cart_quantity_down" href="Cartdecreament?id=@item.MyCart.ProductId"> - </a>
+                                        <input class="cart_quantity_input" type="text" disabled
+                                               name="quantity" value="@item.MyCart.QTY" autocomplete="off" size="2">
+                                        <a class="cart_quantity_up" href="Cartincreament?id=@item.MyCart.ProductId"> + </a>
+                                    </div>
+                                </td>
+                                <td class="cart_total">
+                                    @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
+                                    {
+                                        productsubtotal = Convert.ToInt32(item.MyCart.QTY) * Convert.ToInt32(item.MyProduct.newprice);
+                                        <p class="cart_total_price">@productsubtotal</p>
+                                    }
+                                    else
+                                    {
+                                        productsubtotal = Convert.ToInt32(item.MyCart.QTY) * Convert.ToInt32(item.MyProduct.SalePrice);
+                                        <p class="cart_total_price">@productsubtotal</p>
+                                    }
+                                </td>
+                                <td class="cart_delete">
+                                    <a class="cart_quantity_delete" onclick="return confirm('Are you sure want to delete this product?')"
+                                       href="../Cart/CartDelete?id=@item.MyCart.CartId"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                            //subtotal += Convert.ToInt32(item.MyCart.QTY) * Convert.ToInt32(item.MyCart.UnitPrice);
+                            subtotal += productsubtotal;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section> <!--/#cart_items-->
+
+    <section id="do_action">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+
+                </div>
+                <div class="col-sm-8">
+                    <div class="total_area">
+                        <ul>
+                            <li> Cart Sub Total<span>@subtotal</span></li>
+                            <li> Shipping Cost <span>Rs.200 </span></li>
+                            @{total = subtotal + 200;}
+                            <li> Total <span> Rs.@total </span></li>
+                        </ul>
+                        <a class="btn btn-default update" href="../Customer/Index">Continue Shopping</a>
+                        <a class="btn btn-default check_out" href="../Checkout/Checkout">Check Out</a>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+
+                </div>
+            </div>
+        </div>
+
+    </section><!--/#do_action-->
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

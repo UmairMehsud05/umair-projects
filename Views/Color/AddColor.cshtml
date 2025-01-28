@@ -1,0 +1,88 @@
+﻿@model Online_Shopping.Models.Color
+
+@{
+    ViewBag.Title = "AddColor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-4">
+        <div class="card card-statistics">
+            <div class="card-header">
+                <div class="card-heading">
+                    <h4 class="card-title">Add Color</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm(FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(x => x.ColorID)
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <label>Color Name</label>
+                                @Html.EditorFor(model => model.ColorName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ColorName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <label>Color Code</label>
+                                @Html.EditorFor(model => model.ColorCode, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ColorCode, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Add Category" class="btn btn-primary" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-8">
+        <div class="card card-statistics">
+            <div class="card-body">
+                <div class="export-table-wrapper table-responsive">
+                    <table id="export-table" class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(x => x.ColorName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(x => x.ColorCode)
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.ColorList)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.ColorName
+                                    </td>
+                                    <td>
+                                        @item.ColorCode
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink(" ", "AddColor", new { id = item.ColorID }, new { @class = "btn btn-primary zmdi zmdi-edit" })
+                                        @Html.ActionLink(" ", "Delete", new { id = item.ColorID }, new { @class = "btn btn-danger zmdi zmdi-delete" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
