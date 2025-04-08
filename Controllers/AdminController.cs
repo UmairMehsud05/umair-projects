@@ -45,6 +45,7 @@ namespace Online_Shopping.Controllers
             Admin adm = Admin_Method.SignIn(ad);
             if (adm!= null)
             {
+                Session["AdminID"] = adm.AdminID;
                 return RedirectToAction("Index");
             }
             else
@@ -52,5 +53,13 @@ namespace Online_Shopping.Controllers
                 return View();
             }
         }
+
+        [HttpGet]
+        public ActionResult Profile()
+        {
+            Admin ad = Admin_Method.Profile(1);
+            return View(ad);
+        }
+
     }
 }

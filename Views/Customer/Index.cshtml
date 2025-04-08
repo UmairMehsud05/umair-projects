@@ -153,10 +153,9 @@
                                 <div class="product-image-wrapper" style="height:560px">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="../../UploadedImages/@item.MyProduct.Image" width="255" height="300" alt="" />
+                                            <img src="../../UploadedImages/@item.MyProduct.Image" width="255" height="360" alt="" />
                                             @if (Convert.ToBoolean(item.MyProduct.IsSale) == true)
                                             {
-                                                <h4 style="color: #FE980F">@item.MyProduct.Discount% Off</h4>
                                                 <h4 style="color: #FE980F"><del>Rs.@item.MyProduct.SalePrice</del></h4>
                                                 <h4 style="color: #FE980F">Rs.@item.MyProduct.newprice</h4>
                                             }

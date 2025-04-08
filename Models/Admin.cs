@@ -32,7 +32,7 @@ namespace Online_Shopping.Models
         [Required(ErrorMessage ="Password is Required")]
         [StringLength(16,MinimumLength =8,ErrorMessage ="Password must be 8-16 characters")]
         public string Password { get; set; }
-        public Image image { get; set; }
+        public string image { get; set; }
     }
 
     public class Admin_Method
@@ -79,6 +79,25 @@ namespace Online_Shopping.Models
             else
             {
                 adm = null;
+            }
+            return adm;
+        }
+
+        public static Admin Profile(int id)
+        {
+            SqlParameter[] sgin = new SqlParameter[2];
+            sgin[0] = new SqlParameter("@ActionType", Action.Select);
+            sgin[1] = new SqlParameter("@AdminID", id);
+            DataTable dt = DB.sp_Table("sp_Admin", sgin);
+            Admin adm = new Admin();
+            if (dt.Rows.Count > 0)
+            {
+                adm.AdminID = Convert.ToInt32(dt.Rows[0]["AdminID"]);
+                adm.Name = Convert.ToString(dt.Rows[0]["Name"]);
+                adm.Email = Convert.ToString(dt.Rows[0]["Email"]);
+                adm.Password = Convert.ToString(dt.Rows[0]["Password"]);
+                adm.Contact = Convert.ToString(dt.Rows[0]["Contact"]);
+                adm.image = Convert.ToString(dt.Rows[0]["image"]);
             }
             return adm;
         }

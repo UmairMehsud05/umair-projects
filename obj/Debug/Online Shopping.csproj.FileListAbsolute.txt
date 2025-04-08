@@ -156,3 +156,82 @@ E:\Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.csproj.Cor
 E:\Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.csproj.CopyComplete
 E:\Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.dll
 E:\Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.pdb
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Online Shopping.dll.config
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Online Shopping.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Online Shopping.pdb
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\csc.exe
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\csc.exe.config
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\csc.rsp
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\csi.exe
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\csi.exe.config
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\csi.rsp
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.AppContext.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Collections.Immutable.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Console.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Globalization.Calendars.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.IO.Compression.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.IO.FileSystem.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Net.Http.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Net.Sockets.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Reflection.Metadata.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.ValueTuple.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Xml.XPath.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\vbc.exe
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\vbc.exe.config
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\vbc.rsp
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\VBCSCompiler.exe
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\roslyn\VBCSCompiler.exe.config
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Antlr3.Runtime.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Microsoft.Web.Infrastructure.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Newtonsoft.Json.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Helpers.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Mvc.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Optimization.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Razor.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.WebPages.Deployment.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.WebPages.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.WebPages.Razor.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\WebGrease.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Helpers.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Mvc.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Optimization.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.Razor.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.WebPages.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.WebPages.Deployment.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\System.Web.WebPages.Razor.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Newtonsoft.Json.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Antlr3.Runtime.pdb
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.csproj.AssemblyReference.cache
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.csproj.CoreCompileInputs.cache
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.csproj.CopyComplete
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.dll
+E:\Projects\MVC Projects\Online Shopping\Online Shopping\obj\Debug\Online Shopping.pdb

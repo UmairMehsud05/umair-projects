@@ -155,6 +155,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="AdminTemp\css\mCSB_buttons.html" />
     <Content Include="AdminTemp\css\owl.video.play.html" />
     <Content Include="AdminTemp\css\style.css" />
@@ -227,6 +228,7 @@
     <Content Include="AdminTemp\img\marker\blue.html" />
     <Content Include="AdminTemp\img\marker\purple.html" />
     <Content Include="AdminTemp\img\marker\red.html" />
+    <Content Include="AdminTemp\img\Online Shoping png.png" />
     <Content Include="AdminTemp\img\product.jpg" />
     <Content Include="AdminTemp\img\real-estate\01.jpg" />
     <Content Include="AdminTemp\img\real-estate\02.jpg" />
@@ -338,6 +340,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ScreenShots\AdminDashboard.png" />
+    <Content Include="ScreenShots\Adminlogin.png" />
+    <Content Include="ScreenShots\Brand.png" />
+    <Content Include="ScreenShots\Cart.png" />
+    <Content Include="ScreenShots\Category.png" />
+    <Content Include="ScreenShots\CheckOut.png" />
+    <Content Include="ScreenShots\Color.png" />
+    <Content Include="ScreenShots\Orders.png" />
+    <Content Include="ScreenShots\ProductDetails.png" />
+    <Content Include="ScreenShots\Products.png" />
+    <Content Include="ScreenShots\ProductsList.png" />
+    <Content Include="ScreenShots\SubCategory.png" />
+    <Content Include="ScreenShots\UserLogin.png" />
+    <Content Include="ScreenShots\UserSideMainPage.png" />
+    <Content Include="ScreenShots\Wishlist.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="AdminTemp\fonts\cryptocurrency-icons.eot" />
@@ -382,6 +399,7 @@
     <Content Include="CustomerAssets\fonts\fontawesome-webfont.woff" />
     <Content Include="CustomerAssets\fonts\FontAwesome.otf" />
     <Content Include="CustomerAssets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -432,6 +450,7 @@
     <Content Include="Views\Checkout\Checkout.cshtml" />
     <Content Include="Views\Checkout\OrderList.cshtml" />
     <Content Include="Views\OrderDetail\OrderDetails.cshtml" />
+    <Content Include="Views\Admin\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

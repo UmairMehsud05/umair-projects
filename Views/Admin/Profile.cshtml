@@ -1,0 +1,69 @@
+﻿@model Online_Shopping.Models.Admin
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+            <!-- begin row -->
+            <div class="row">
+                <div class="col-md-12 m-b-30">
+                    <!-- begin page title -->
+                    <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                        <div class="page-title mb-2 mb-sm-0">
+                            <h1>Profile</h1>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                </div>
+            </div>
+            <!-- end row -->
+            <!--start contact contant-->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-statistics contact-contant">
+                        <div class="card-body py-4">
+                            <h5 style="color:red"><strong>Note:</strong>Admin Cannot Edit their Profile.</h5>
+                            <div class="row">
+                                <div class="col4">
+                                    <img src="~/AdminTemp/img/avtar/01.jpg" alt="" class="img-fluid" style="width:150px;">
+                                </div>
+                                <div class="col-4"></div>
+                                <div class="col-4">
+                                    <div>
+                                        <ul class="nav">
+                                            <li class="nav-item">
+                                                <div class="img-icon"><i class="fa fa-user"></i></div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <p>@Model.Name</p>
+                                            </li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li class="nav-item">
+                                                <div class="img-icon"><i class="fa fa-mobile"></i></div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <p>@Model.Contact</p>
+                                            </li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li class="nav-item">
+                                                <div class="img-icon"><i class="fa fa-envelope-o"></i></div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <p>@Model.Email</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
